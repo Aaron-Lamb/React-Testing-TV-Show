@@ -36,12 +36,14 @@ export default function App() {
       <img className="poster-img" src={show.image.original} alt={show.name} />
       <h1>{show.name}</h1>
       {parse(show.summary)}
+      <div data-testid='seasonDropdown'>
       <Dropdown
         options={Object.keys(seasons)}
         onChange={handleSelect}
         value={selectedSeason || "Select a season"}
         placeholder="Select an option"
       />
+      </div>
       <Episodes episodes={episodes} />
     </div>
   );
